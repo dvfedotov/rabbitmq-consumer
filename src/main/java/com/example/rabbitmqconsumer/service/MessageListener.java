@@ -1,7 +1,7 @@
 package com.example.rabbitmqconsumer.service;
 
 import com.example.rabbitmqconsumer.config.MqConfig;
-import com.example.rabbitmqconsumer.domain.CustomMessage;
+import com.example.rabbitmqconsumer.domain.LoggingOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageListener {
 
-    @RabbitListener(queues = MqConfig.MESSAGE_QUEUE_1)
-    public void listener1(CustomMessage message) {
-        log.info("Received first from {}",message.toString());
+    @RabbitListener(queues = MqConfig.MESSAGE_QUEUE_3)
+    public void listener3(LoggingOrder order) {
+        log.info("Received accepted  order from {}", order.toString());
     }
 
-    @RabbitListener(queues = MqConfig.MESSAGE_QUEUE_2)
-    public void listener2(CustomMessage message) {
-        log.info("Received second from {}",message.toString());
+    @RabbitListener(queues = MqConfig.MESSAGE_QUEUE_4)
+    public void listener4(LoggingOrder order) {
+        log.info("Received canceled order from {}", order.toString());
     }
 
 }

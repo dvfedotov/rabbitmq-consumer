@@ -17,24 +17,24 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MqConfig {
 
-    public static final String MESSAGE_QUEUE_1 = "message_queue_1";
-    public static final String MESSAGE_QUEUE_2 = "message_queue_2";
-    public static final String MESSAGE_EXCHANGE = "message_exchange";
-    public static final String MESSAGE_ROUTING_KEY_1 = "liquid";
-    public static final String MESSAGE_ROUTING_KEY_2 = "countable";
+    public static final String MESSAGE_QUEUE_3 = "message_queue_3";
+    public static final String MESSAGE_QUEUE_4 = "message_queue_4";
+    public static final String MESSAGE_EXCHANGE_2 = "message_exchange_2";
+    public static final String MESSAGE_ROUTING_KEY_1 = "info";
+    public static final String MESSAGE_ROUTING_KEY_2 = "error";
 
     @Bean
     public Queue queue1() {
-        return new Queue(MESSAGE_QUEUE_1);
+        return new Queue(MESSAGE_QUEUE_3);
     }
 
     @Bean
     public Queue queue2() {
-        return new Queue(MESSAGE_QUEUE_2);
+        return new Queue(MESSAGE_QUEUE_4);
     }
     @Bean
     public TopicExchange exchange() {
-        return new TopicExchange(MESSAGE_EXCHANGE);
+        return new TopicExchange(MESSAGE_EXCHANGE_2);
     }
 
     @Bean

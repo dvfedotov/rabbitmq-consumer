@@ -16,4 +16,6 @@ public class CustomMessage {
     private String message;
     private Date messageDate;
     private ProductType productType;
+    private int number;
+    private int amount;
 }
